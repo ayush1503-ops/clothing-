@@ -192,11 +192,11 @@ export default function App() {
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-[#0d0e11] text-[#f4f4f5] flex flex-col font-sans selection:bg-[#c5a880] selection:text-black">
+    <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-zinc-900 selection:text-white">
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-white text-zinc-950 font-medium text-xs sm:text-sm px-4 py-3 shadow-2xl border border-black/10 flex items-center gap-2 animate-bounce">
-          <span className="w-2 h-2 rounded-full bg-emerald-600" />
+        <div className="fixed bottom-6 right-6 z-50 bg-zinc-950 text-white font-medium text-xs sm:text-sm px-4 py-3 shadow-xl rounded-md border border-zinc-800 flex items-center gap-2 animate-bounce">
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -205,6 +205,7 @@ export default function App() {
       <Navbar
         cartCount={totalCartCount}
         wishlistCount={wishlist.length}
+        selectedCategory={selectedCategory}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenWishlist={() => setIsWishlistOpen(true)}
         onOpenSearch={() => setIsSearchOpen(true)}

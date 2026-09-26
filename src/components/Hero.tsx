@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, MapPin, Star, ArrowUpRight, Compass, Clock } from 'lucide-react';
+import { ArrowDown, MapPin, Star, ArrowUpRight, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { STORE_INFO } from '../data/storeData';
 
 interface HeroProps {
@@ -9,108 +9,105 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onExploreClick, onVisitStoreClick }) => {
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden bg-[#090a0c] border-b border-white/10">
-      {/* Background Campaign Visual with Controlled Editorial Grade */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/src/assets/images/hero_big_bear_fashion_1790427180502.jpg"
-          alt="Big Bear Wear Luxury Editorial Campaign"
-          className="w-full h-full object-cover object-[center_28%] scale-100 filter brightness-[0.78] contrast-[1.08]"
-          referrerPolicy="no-referrer"
-        />
-        {/* Editorial Linear Scrims */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090a0c] via-[#090a0c]/40 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#090a0c]/90 via-transparent to-[#090a0c]/80" />
-      </div>
+    <section className="relative bg-[#fafafc] border-b border-zinc-200 overflow-hidden">
+      {/* Subtle architectural background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000006_1px,transparent_1px),linear-gradient(to_bottom,#00000006_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      {/* Top Editorial Index Bar */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 flex flex-wrap items-center justify-between text-[11px] font-mono tracking-widest text-zinc-400 uppercase gap-4">
-        <div className="flex items-center gap-3">
-          <span className="w-1.5 h-1.5 bg-[#c5a880] inline-block" />
-          <span className="text-zinc-200">AUTUMN / WINTER '26 EDIT</span>
-          <span className="text-zinc-600">/</span>
-          <span>CURATED IMPORTS</span>
-        </div>
-        <div className="hidden md:flex items-center gap-4 text-zinc-400">
-          <span>COORDINATES: 28.5284° N, 77.0863° E</span>
-          <span className="text-zinc-600">/</span>
-          <span className="text-[#c5a880] flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" />
-            STREET 9 FLAGSHIP OPEN TILL 10:30 PM
-          </span>
-        </div>
-      </div>
-
-      {/* Main Editorial Hero Spread */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-24 my-auto">
-        <div className="max-w-3xl">
-          {/* Subtle rating indicator without pill bubble */}
-          <div className="inline-flex items-center gap-3 mb-6 pb-2 border-b border-white/15 text-xs text-zinc-300">
-            <div className="flex items-center text-[#d4af37]">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-[#d4af37]" />
-              ))}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Bold Typographic Headline, Description, & Capsule CTA */}
+          <div className="lg:col-span-6 space-y-6 text-left">
+            {/* Top kicker badge */}
+            <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-white border border-zinc-300 rounded-full text-xs shadow-xs text-zinc-700 font-mono">
+              <span className="flex items-center text-amber-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3.5 h-3.5 fill-amber-500" />
+                ))}
+              </span>
+              <span className="font-bold text-zinc-900">4.8 Rating</span>
+              <span className="text-zinc-300">·</span>
+              <span className="text-zinc-600">77 Verified Google Reviews</span>
+              <span className="text-zinc-300 hidden sm:inline">·</span>
+              <span className="text-emerald-700 font-semibold hidden sm:inline">Kapas Hera Flagship</span>
             </div>
-            <span className="font-mono text-white tracking-wider font-semibold">4.8 / 5.0</span>
-            <span className="text-zinc-500 font-mono">·</span>
-            <span className="text-zinc-300 font-light tracking-wide">77 Google Local Reviews</span>
-            <span className="text-zinc-500 font-mono">·</span>
-            <span className="text-zinc-400 uppercase font-mono text-[10px] tracking-widest">Kapas Hera Flagship</span>
-          </div>
 
-          {/* Primary Editorial Headline */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-serif text-white font-light tracking-tight uppercase leading-[0.9] mb-8">
-            Wear Your <br />
-            <span className="italic font-normal text-[#ece8e1] tracking-normal">Identity.</span>
-          </h1>
-
-          {/* High-end Brand Statement */}
-          <p className="max-w-xl text-base sm:text-xl text-zinc-300 font-light leading-relaxed mb-10 border-l border-[#c5a880] pl-5">
-            Premium fashion, carefully selected for quality, fit, and everyday confidence. High-density 280–450 GSM imported textiles, consistent proportions, and honest personal styling.
-          </p>
-
-          {/* Sharp Architectural Actions */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-            <button
-              onClick={onExploreClick}
-              className="px-8 py-4 bg-white text-zinc-950 font-semibold text-xs uppercase tracking-[0.2em] hover:bg-[#ece8e1] transition-all flex items-center justify-center gap-3 group shadow-2xl"
-            >
-              <span>Explore Collection</span>
-              <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
-            </button>
-
-            <button
-              onClick={onVisitStoreClick}
-              className="px-7 py-4 bg-black/60 hover:bg-black/90 text-white font-medium text-xs uppercase tracking-[0.2em] border border-white/20 hover:border-white/60 transition-all flex items-center justify-center gap-3 backdrop-blur-sm"
-            >
-              <MapPin className="w-3.5 h-3.5 text-[#c5a880]" />
-              <span>Visit Kapas Hera Store</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Architectural Specification Grid */}
-      <div className="relative z-10 w-full border-t border-white/10 bg-[#090a0c]/85 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 md:grid-cols-4 gap-6 text-xs">
-          <div className="space-y-1">
-            <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest block">01 / Fabric Standards</span>
-            <p className="font-medium text-zinc-200">280–450 GSM Combed Weaves</p>
-          </div>
-          <div className="space-y-1">
-            <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest block">02 / Fit Calibration</span>
-            <p className="font-medium text-zinc-200">Consistent Measured Drapes</p>
-          </div>
-          <div className="space-y-1">
-            <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-widest block">03 / Fair Pricing</span>
-            <p className="font-medium text-zinc-200">Zero Luxury Mall Surcharges</p>
-          </div>
-          <div className="space-y-1">
-            <span className="font-mono text-[10px] text-[#c5a880] uppercase tracking-widest block">04 / Physical Atelier</span>
-            <p className="font-medium text-white flex items-center gap-1.5">
-              <span>Street 9, Kapas Hera · Till 10:30 PM</span>
+            {/* Sub-label */}
+            <p className="text-xs uppercase font-mono tracking-[0.25em] text-emerald-700 font-bold">
+              AUTUMN / WINTER '26 EDITORIAL CAPSULE
             </p>
+
+            {/* Bold Headline inspired by reference structure */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-sans font-black tracking-tight text-zinc-950 uppercase leading-[0.95]">
+              WEAR YOUR <br />
+              <span className="font-serif font-normal italic text-zinc-800">Identity.</span>
+            </h1>
+
+            {/* Supporting description copy */}
+            <p className="max-w-xl text-base sm:text-lg text-zinc-600 font-light leading-relaxed">
+              Curated imported menswear crafted from heavyweight 280–450 GSM combed cottons and shuttle-loomed selvedge denim. Clean cuts, consistent drapes, and honest in-store personal styling.
+            </p>
+
+            {/* Capsule CTA Buttons like the reference ("View Details") */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button
+                onClick={onExploreClick}
+                className="px-8 py-3.5 bg-zinc-900 hover:bg-black text-white font-medium text-xs sm:text-sm uppercase tracking-wider rounded-full transition-all shadow-md hover:shadow-lg flex items-center gap-2.5 group"
+              >
+                <span>Explore Collection</span>
+                <span className="transition-transform group-hover:translate-x-1 font-mono text-emerald-400">→</span>
+              </button>
+
+              <button
+                onClick={onVisitStoreClick}
+                className="px-6 py-3.5 bg-white hover:bg-zinc-50 text-zinc-900 font-medium text-xs sm:text-sm uppercase tracking-wider rounded-full border border-zinc-300 hover:border-zinc-400 transition-all flex items-center gap-2 shadow-xs"
+              >
+                <MapPin className="w-4 h-4 text-emerald-600" />
+                <span>Visit Store (Street 9)</span>
+              </button>
+            </div>
+
+            {/* Core Pillars Row */}
+            <div className="pt-6 border-t border-zinc-200/80 grid grid-cols-3 gap-4 text-xs font-mono">
+              <div>
+                <span className="text-zinc-500 block text-[10px] uppercase">Fabric Weight</span>
+                <span className="font-bold text-zinc-900 text-xs sm:text-sm">280–450 GSM</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block text-[10px] uppercase">Fit Assurance</span>
+                <span className="font-bold text-zinc-900 text-xs sm:text-sm">Calibrated Proportions</span>
+              </div>
+              <div>
+                <span className="text-zinc-500 block text-[10px] uppercase">Store Hours</span>
+                <span className="font-bold text-emerald-700 text-xs sm:text-sm">Till 10:30 PM Daily</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: High-End Studio Cutout/Fashion Photography on Pristine White */}
+          <div className="lg:col-span-6 relative flex justify-center items-center">
+            <div className="relative w-full max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl border border-zinc-200/90 bg-white group">
+              <img
+                src="/src/assets/images/hero_white_studio_fashion_1790431595732.jpg"
+                alt="Big Bear Wear White Studio Fashion"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                referrerPolicy="no-referrer"
+              />
+
+              {/* Floating article tag */}
+              <div className="absolute top-4 left-4 p-3 bg-white/95 backdrop-blur-md rounded-lg shadow-sm border border-zinc-200/80 text-xs space-y-0.5">
+                <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-700 font-bold block">
+                  FEATURED ARTICLE
+                </span>
+                <p className="font-semibold text-zinc-900">450 GSM French Terry Hoodie</p>
+                <p className="font-mono text-[11px] text-zinc-500">₹3,290 · In Stock at Kapas Hera</p>
+              </div>
+
+              {/* In-Store fitting guarantee watermark */}
+              <div className="absolute bottom-4 right-4 p-2.5 bg-black/85 backdrop-blur-md rounded-md text-white text-[11px] font-mono flex items-center gap-1.5 shadow-md">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Available to try at Street 9</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

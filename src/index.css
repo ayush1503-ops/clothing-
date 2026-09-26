@@ -13,8 +13,8 @@
 
 body {
   font-family: var(--font-body);
-  background-color: #0d0e11;
-  color: #f3f4f6;
+  background-color: #ffffff;
+  color: #18181b;
   overflow-x: hidden;
 }
 
@@ -26,18 +26,18 @@ body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar for clean white theme */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d0e11;
+  background: #f4f4f5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d4d4d8;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #a1a1aa;
 }

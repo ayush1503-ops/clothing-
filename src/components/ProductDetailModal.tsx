@@ -53,13 +53,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     : allProducts.filter((p) => p.id !== product.id).slice(0, 3);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-fadeIn">
-      <div className="bg-[#111215] border border-white/20 max-w-5xl w-full max-h-[94vh] overflow-y-auto relative my-auto shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/60 backdrop-blur-sm overflow-y-auto animate-fadeIn">
+      <div className="bg-white border border-zinc-200 rounded-2xl max-w-5xl w-full max-h-[94vh] overflow-y-auto relative my-auto shadow-2xl">
         {/* Sticky close button */}
         <button
           onClick={onClose}
           aria-label="Close product detail"
-          className="absolute top-4 right-4 z-20 p-2 bg-black/60 hover:bg-black text-zinc-300 hover:text-white rounded-full backdrop-blur-md border border-white/10 transition-colors"
+          className="absolute top-4 right-4 z-20 p-2 bg-white/90 hover:bg-zinc-100 text-zinc-600 hover:text-black rounded-full backdrop-blur-md border border-zinc-200 transition-colors shadow-sm"
         >
           <X className="w-5 h-5" />
         </button>
@@ -68,7 +68,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           {/* Left Column: Gallery (7 cols on desktop) */}
           <div className="md:col-span-6 lg:col-span-7 space-y-4">
             {/* Main Stage Image */}
-            <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-900 border border-white/10">
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100 border border-zinc-200 rounded-xl">
               <img
                 src={activeImage}
                 alt={product.name}
@@ -76,7 +76,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 referrerPolicy="no-referrer"
               />
               {product.badge && (
-                <span className="absolute top-4 left-4 bg-black/70 backdrop-blur-md border border-white/15 text-zinc-200 text-xs px-2.5 py-1 uppercase tracking-wider font-semibold">
+                <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-md border border-zinc-200 text-zinc-900 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold font-mono shadow-xs">
                   {product.badge}
                 </span>
               )}
@@ -90,8 +90,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     key={idx}
                     type="button"
                     onClick={() => setActiveImage(img)}
-                    className={`relative w-20 aspect-[3/4] overflow-hidden border-2 transition-all ${
-                      activeImage === img ? 'border-white opacity-100' : 'border-transparent opacity-60 hover:opacity-90'
+                    className={`relative w-20 aspect-[3/4] overflow-hidden rounded-lg border-2 transition-all ${
+                      activeImage === img ? 'border-zinc-900 shadow-sm' : 'border-zinc-200 opacity-60 hover:opacity-100'
                     }`}
                   >
                     <img
@@ -110,40 +110,40 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-between space-y-6">
             <div>
               {/* Category, SKU & In-Store Stock */}
-              <div className="flex items-center justify-between text-xs font-mono text-zinc-400 mb-2">
-                <span className="uppercase tracking-widest text-[#c5a880]">{product.category}</span>
-                <span className="text-zinc-400">{product.articleCode || `BBW-${product.id.toUpperCase()}`}</span>
+              <div className="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
+                <span className="uppercase tracking-widest text-emerald-700 font-bold">{product.category}</span>
+                <span className="text-zinc-500">{product.articleCode || `BBW-${product.id.toUpperCase()}`}</span>
               </div>
 
               {/* Title */}
-              <h1 className="text-2xl sm:text-3xl font-serif text-white font-light mb-2">
+              <h1 className="text-2xl sm:text-3xl font-sans font-bold text-zinc-950 mb-2 leading-snug">
                 {product.name}
               </h1>
 
               {/* Garment Weight & Atelier In-Stock badge */}
-              <div className="flex flex-wrap items-center gap-3 mb-4 text-xs font-mono">
+              <div className="flex flex-wrap items-center gap-2.5 mb-4 text-xs font-mono">
                 {product.weightGsm && (
-                  <span className="px-2 py-0.5 bg-zinc-900 border border-white/10 text-zinc-300">
+                  <span className="px-2.5 py-1 bg-zinc-100 border border-zinc-200 rounded-md text-zinc-800 font-medium">
                     {product.weightGsm}
                   </span>
                 )}
-                <span className="flex items-center gap-1.5 text-emerald-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>{product.stockKapasHera || 4} in stock at Street 9 Flagship</span>
+                <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                  <span>{product.stockKapasHera || 4} in stock at Kapas Hera</span>
                 </span>
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-5">
-                <span className="text-2xl sm:text-3xl font-semibold text-white font-mono tabular-nums">
+                <span className="text-2xl sm:text-3xl font-bold text-zinc-950 font-mono tabular-nums">
                   ₹{product.price.toLocaleString('en-IN')}
                 </span>
                 {product.originalPrice && (
                   <>
-                    <span className="text-sm text-zinc-500 line-through font-mono tabular-nums">
+                    <span className="text-sm text-zinc-400 line-through font-mono tabular-nums">
                       ₹{product.originalPrice.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-xs text-emerald-400 font-mono font-medium">
+                    <span className="text-xs text-emerald-700 font-mono font-semibold">
                       Save ₹{(product.originalPrice - product.price).toLocaleString('en-IN')}
                     </span>
                   </>
@@ -153,8 +153,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Color Selector */}
               <div className="space-y-2 mb-6">
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="uppercase tracking-wider text-zinc-400">Color:</span>
-                  <span className="text-zinc-200 font-semibold">{selectedColor}</span>
+                  <span className="uppercase tracking-wider text-zinc-500">Color:</span>
+                  <span className="text-zinc-900 font-bold">{selectedColor}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   {product.colors.map((color) => (
@@ -162,14 +162,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       key={color.name}
                       type="button"
                       onClick={() => setSelectedColor(color.name)}
-                      className={`flex items-center gap-2 px-3 py-1.5 border transition-all text-xs font-mono ${
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border transition-all text-xs font-mono ${
                         selectedColor === color.name
-                          ? 'border-white bg-white/10 text-white font-semibold'
-                          : 'border-white/10 text-zinc-400 hover:border-white/30'
+                          ? 'border-zinc-900 bg-zinc-50 text-zinc-950 font-bold ring-1 ring-zinc-900'
+                          : 'border-zinc-200 text-zinc-600 hover:border-zinc-400 bg-white'
                       }`}
                     >
                       <span
-                        className="w-3 h-3 rounded-full border border-black/40"
+                        className="w-3 h-3 rounded-full border border-black/20"
                         style={{ backgroundColor: color.hex }}
                       />
                       <span>{color.name}</span>
@@ -181,11 +181,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Size Selector + Size Guide link */}
               <div className="space-y-2 mb-6">
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="uppercase tracking-wider text-zinc-400">Select Size:</span>
+                  <span className="uppercase tracking-wider text-zinc-500">Select Size:</span>
                   <button
                     type="button"
                     onClick={() => setShowSizeGuide(!showSizeGuide)}
-                    className="text-[#c5a880] hover:text-white underline flex items-center gap-1"
+                    className="text-emerald-700 hover:text-emerald-800 font-medium underline flex items-center gap-1"
                   >
                     <Ruler className="w-3.5 h-3.5" />
                     <span>Measurements Chart</span>
@@ -197,39 +197,39 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       key={sz}
                       type="button"
                       onClick={() => setSelectedSize(sz)}
-                      className={`py-2 text-xs font-mono font-bold uppercase tracking-wider transition-all border ${
+                      className={`py-2 text-xs font-mono font-bold uppercase tracking-wider rounded-lg transition-all border ${
                         selectedSize === sz
-                          ? 'border-white bg-white text-zinc-950'
-                          : 'border-white/15 text-zinc-300 hover:border-white/40 hover:bg-white/5'
+                          ? 'border-zinc-900 bg-zinc-900 text-white shadow-sm'
+                          : 'border-zinc-200 text-zinc-700 hover:border-zinc-400 bg-zinc-50'
                       }`}
                     >
                       {sz}
                     </button>
                   ))}
                 </div>
-                <p className="text-[11px] text-zinc-400 pt-1 font-mono">
+                <p className="text-[11px] text-zinc-500 pt-1 font-mono">
                   Calibrated fit: {product.fit}
                 </p>
               </div>
 
               {/* Quantity Stepper */}
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs uppercase font-mono tracking-wider text-zinc-400">Qty:</span>
-                <div className="flex items-center border border-white/20 bg-zinc-900">
+                <span className="text-xs uppercase font-mono tracking-wider text-zinc-500">Qty:</span>
+                <div className="flex items-center border border-zinc-300 rounded-lg overflow-hidden bg-white">
                   <button
                     type="button"
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-3 py-1.5 text-sm text-zinc-400 hover:text-white"
+                    className="px-3 py-1.5 text-sm text-zinc-600 hover:text-black hover:bg-zinc-100"
                   >
                     -
                   </button>
-                  <span className="px-3 py-1.5 text-xs font-mono font-semibold text-white">
+                  <span className="px-3 py-1.5 text-xs font-mono font-bold text-zinc-900">
                     {quantity}
                   </span>
                   <button
                     type="button"
                     onClick={() => setQuantity(quantity + 1)}
-                    className="px-3 py-1.5 text-sm text-zinc-400 hover:text-white"
+                    className="px-3 py-1.5 text-sm text-zinc-600 hover:text-black hover:bg-zinc-100"
                   >
                     +
                   </button>
@@ -242,11 +242,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <button
                     type="button"
                     onClick={handleAddToCart}
-                    className="flex-1 py-3.5 bg-white hover:bg-[#ece8e1] text-zinc-950 font-mono font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-lg"
+                    className="flex-1 py-3.5 bg-zinc-900 hover:bg-black text-white font-mono font-bold text-xs uppercase tracking-wider rounded-full transition-all flex items-center justify-center gap-2 shadow-sm"
                   >
                     {addedAnimation ? (
                       <>
-                        <Check className="w-4 h-4 text-emerald-700" />
+                        <Check className="w-4 h-4 text-emerald-400" />
                         <span>Added to Bag</span>
                       </>
                     ) : (
@@ -261,10 +261,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     type="button"
                     onClick={() => onToggleWishlist(product)}
                     aria-label="Save to Wishlist"
-                    className={`p-3.5 border transition-all ${
+                    className={`p-3.5 rounded-full border transition-all ${
                       isWishlisted
-                        ? 'border-red-500 bg-red-500/10 text-red-500'
-                        : 'border-white/20 text-zinc-300 hover:text-white hover:border-white/50'
+                        ? 'border-rose-500 bg-rose-50 text-rose-600 shadow-sm'
+                        : 'border-zinc-300 text-zinc-600 hover:text-black hover:border-zinc-400 bg-white'
                     }`}
                   >
                     <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : ''}`} />
@@ -274,41 +274,41 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <button
                   type="button"
                   onClick={handleBuyNow}
-                  className="w-full py-3 bg-[#c5a880] hover:bg-[#b5956a] text-zinc-950 font-mono font-bold text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-mono font-bold text-xs uppercase tracking-wider rounded-full transition-colors flex items-center justify-center gap-2 shadow-xs"
                 >
                   <span>Instant Checkout · Cash on Delivery / UPI</span>
                 </button>
               </div>
 
               {/* Service & Trust Markers */}
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-2.5 text-xs text-zinc-400">
-                <div className="flex items-center gap-2 text-zinc-300">
-                  <Truck className="w-4 h-4 text-[#c5a880]" />
+              <div className="mt-6 pt-6 border-t border-zinc-200 space-y-2.5 text-xs text-zinc-600 font-light">
+                <div className="flex items-center gap-2 text-zinc-800">
+                  <Truck className="w-4 h-4 text-emerald-700 shrink-0" />
                   <span>Free Express Delivery across Delhi NCR & India on orders &gt; ₹2,500</span>
                 </div>
-                <div className="flex items-center gap-2 text-zinc-300">
-                  <ShieldCheck className="w-4 h-4 text-[#c5a880]" />
+                <div className="flex items-center gap-2 text-zinc-800">
+                  <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
                   <span>Complimentary in-store hem adjustments at Kapas Hera Flagship</span>
                 </div>
-                <div className="flex items-center gap-2 text-zinc-300">
-                  <RefreshCw className="w-4 h-4 text-[#c5a880]" />
+                <div className="flex items-center gap-2 text-zinc-800">
+                  <RefreshCw className="w-4 h-4 text-emerald-700 shrink-0" />
                   <span>7-Day Easy Exchange Policy & Instant Store Fitting Guarantee</span>
                 </div>
               </div>
 
               {/* Fabric & Description Details */}
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
-                <h4 className="text-xs uppercase tracking-wider text-white font-semibold">
+              <div className="mt-6 pt-6 border-t border-zinc-200 space-y-3">
+                <h4 className="text-xs uppercase tracking-wider text-zinc-900 font-bold font-mono">
                   Article Details & Fabric
                 </h4>
-                <p className="text-xs text-zinc-400 leading-relaxed">
+                <p className="text-xs text-zinc-600 leading-relaxed font-light">
                   {product.description}
                 </p>
-                <div className="p-3 bg-zinc-900 border border-white/5 text-xs space-y-1">
-                  <p className="text-zinc-200">
-                    <strong className="text-white">Fabrication:</strong> {product.fabric}
+                <div className="p-3.5 bg-zinc-50 border border-zinc-200 rounded-lg text-xs space-y-1">
+                  <p className="text-zinc-900">
+                    <strong className="font-semibold">Fabrication:</strong> {product.fabric}
                   </p>
-                  <ul className="list-disc list-inside text-zinc-400 text-[11px] pt-1 space-y-0.5">
+                  <ul className="list-disc list-inside text-zinc-600 text-[11px] pt-1 space-y-0.5">
                     {product.details.map((dt, i) => (
                       <li key={i}>{dt}</li>
                     ))}
@@ -318,8 +318,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             </div>
 
             {/* Related products */}
-            <div className="pt-6 border-t border-white/10">
-              <h4 className="text-xs uppercase tracking-wider text-zinc-300 font-semibold mb-3">
+            <div className="pt-6 border-t border-zinc-200">
+              <h4 className="text-xs uppercase tracking-wider text-zinc-900 font-bold font-mono mb-3">
                 Style It With
               </h4>
               <div className="grid grid-cols-3 gap-3">
@@ -327,9 +327,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <div
                     key={rel.id}
                     onClick={() => onSelectRelated(rel)}
-                    className="group cursor-pointer p-2 bg-zinc-900/60 border border-white/5 hover:border-white/20 transition-all"
+                    className="group cursor-pointer p-2 bg-white border border-zinc-200 rounded-lg hover:border-zinc-400 hover:shadow-sm transition-all"
                   >
-                    <div className="aspect-[3/4] w-full overflow-hidden bg-zinc-800 mb-1.5">
+                    <div className="aspect-[3/4] w-full overflow-hidden rounded-md bg-zinc-100 mb-1.5">
                       <img
                         src={rel.primaryImage}
                         alt={rel.name}
@@ -337,10 +337,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                         referrerPolicy="no-referrer"
                       />
                     </div>
-                    <p className="text-[11px] font-medium text-zinc-200 truncate group-hover:text-[#c5a880]">
+                    <p className="text-[11px] font-medium text-zinc-900 truncate group-hover:text-emerald-700">
                       {rel.name}
                     </p>
-                    <p className="text-[10px] font-mono text-zinc-400">
+                    <p className="text-[10px] font-mono text-zinc-500 font-semibold">
                       ₹{rel.price.toLocaleString('en-IN')}
                     </p>
                   </div>
@@ -353,67 +353,67 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
       {/* Size Guide Modal Sub-drawer */}
       {showSizeGuide && (
-        <div className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="bg-[#121316] border border-white/20 p-6 max-w-lg w-full">
-            <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
-              <h3 className="text-base font-serif text-white">Size Measurement Chart (Inches)</h3>
+        <div className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="bg-white border border-zinc-200 rounded-2xl p-6 max-w-lg w-full shadow-2xl">
+            <div className="flex items-center justify-between pb-3 border-b border-zinc-200 mb-4">
+              <h3 className="text-base font-serif text-zinc-950 font-bold">Size Measurement Chart (Inches)</h3>
               <button
                 onClick={() => setShowSizeGuide(false)}
-                className="text-zinc-400 hover:text-white"
+                className="p-1 text-zinc-400 hover:text-black rounded-full hover:bg-zinc-100 transition-colors"
               >
                 ✕
               </button>
             </div>
-            <p className="text-xs text-zinc-400 mb-4">
+            <p className="text-xs text-zinc-600 mb-4 font-light">
               All Big Bear Wear pieces are cut with consistent proportions. Need a custom fit? Visit our Kapas Hera store for complimentary alterations.
             </p>
             <div className="overflow-x-auto">
-              <table className="w-full text-xs text-left text-zinc-300">
-                <thead className="bg-zinc-800/80 uppercase font-mono text-[10px] text-zinc-400">
+              <table className="w-full text-xs text-left text-zinc-700">
+                <thead className="bg-zinc-100 uppercase font-mono text-[10px] text-zinc-500">
                   <tr>
-                    <th className="p-2">Size</th>
-                    <th className="p-2">Chest (In)</th>
-                    <th className="p-2">Length (In)</th>
-                    <th className="p-2">Shoulder (In)</th>
+                    <th className="p-2.5 rounded-l-md">Size</th>
+                    <th className="p-2.5">Chest (In)</th>
+                    <th className="p-2.5">Length (In)</th>
+                    <th className="p-2.5 rounded-r-md">Shoulder (In)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5 font-mono">
+                <tbody className="divide-y divide-zinc-100 font-mono">
                   <tr>
-                    <td className="p-2 font-bold text-white">S</td>
-                    <td className="p-2">40"</td>
-                    <td className="p-2">27.5"</td>
-                    <td className="p-2">19.5"</td>
+                    <td className="p-2.5 font-bold text-zinc-950">S</td>
+                    <td className="p-2.5">40"</td>
+                    <td className="p-2.5">27.5"</td>
+                    <td className="p-2.5">19.5"</td>
                   </tr>
                   <tr>
-                    <td className="p-2 font-bold text-white">M</td>
-                    <td className="p-2">42"</td>
-                    <td className="p-2">28.5"</td>
-                    <td className="p-2">20.5"</td>
+                    <td className="p-2.5 font-bold text-zinc-950">M</td>
+                    <td className="p-2.5">42"</td>
+                    <td className="p-2.5">28.5"</td>
+                    <td className="p-2.5">20.5"</td>
                   </tr>
                   <tr>
-                    <td className="p-2 font-bold text-white">L</td>
-                    <td className="p-2">44"</td>
-                    <td className="p-2">29.5"</td>
-                    <td className="p-2">21.5"</td>
+                    <td className="p-2.5 font-bold text-zinc-950">L</td>
+                    <td className="p-2.5">44"</td>
+                    <td className="p-2.5">29.5"</td>
+                    <td className="p-2.5">21.5"</td>
                   </tr>
                   <tr>
-                    <td className="p-2 font-bold text-white">XL</td>
-                    <td className="p-2">46"</td>
-                    <td className="p-2">30.5"</td>
-                    <td className="p-2">22.5"</td>
+                    <td className="p-2.5 font-bold text-zinc-950">XL</td>
+                    <td className="p-2.5">46"</td>
+                    <td className="p-2.5">30.5"</td>
+                    <td className="p-2.5">22.5"</td>
                   </tr>
                   <tr>
-                    <td className="p-2 font-bold text-white">XXL</td>
-                    <td className="p-2">48"</td>
-                    <td className="p-2">31.5"</td>
-                    <td className="p-2">23.5"</td>
+                    <td className="p-2.5 font-bold text-zinc-950">XXL</td>
+                    <td className="p-2.5">48"</td>
+                    <td className="p-2.5">31.5"</td>
+                    <td className="p-2.5">23.5"</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <button
               onClick={() => setShowSizeGuide(false)}
-              className="mt-6 w-full py-2 bg-white text-black font-semibold text-xs uppercase tracking-wider"
+              className="mt-6 w-full py-2.5 bg-zinc-900 hover:bg-black text-white font-semibold text-xs uppercase tracking-wider rounded-lg transition-colors shadow-sm"
             >
               Got It
             </button>
