@@ -14,20 +14,20 @@ export const BrandStory: React.FC = () => {
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
               <span className="text-xs uppercase tracking-[0.25em] text-emerald-700 font-bold font-mono">
-                Behind Big Bear Wear
+                Behind Vesper Atelier
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-black text-zinc-950 uppercase tracking-tight leading-tight">
-                Crafted in Kapas Hera. <br />
+                Crafted with Deliberation. <br />
                 Worn with <span className="font-serif font-normal italic text-zinc-800">Distinction.</span>
               </h2>
             </div>
 
             <p className="text-zinc-700 leading-relaxed text-sm sm:text-base font-light">
-              Big Bear Wear was started with a simple, refreshing principle: menswear shouldn't require compromising between exceptional quality and a fair price tag. Too many men were tired of paper-thin fast fashion that unravels after three washes or overpriced mall designer labels inflated by high rents.
+              Vesper Atelier was started with a simple, refreshing principle: menswear shouldn't require compromising between exceptional quality and a fair price tag. Too many men were tired of paper-thin fast fashion that unravels after three washes or overpriced mall designer labels inflated by high rents.
             </p>
 
             <p className="text-zinc-600 leading-relaxed text-sm sm:text-base font-light">
-              At our Street 9 location in Kapas Hera, New Delhi, we personally curate every roll of fabric, overseas import, and garment batch. When you step into our store, our team offers honest suggestions based on what truly flatters your build—never high-pressure sales tactics.
+              At our flagship atelier in the Velvet Arcade Fashion District, we personally curate every roll of fabric, overseas import, and garment batch. When you step into our store, our team offers honest suggestions based on what truly flatters your build—never high-pressure sales tactics.
             </p>
 
             {/* 4 Pillars Grid */}

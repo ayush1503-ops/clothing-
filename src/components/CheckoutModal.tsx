@@ -27,8 +27,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
-  const [city, setCity] = useState('New Delhi');
-  const [pincode, setPincode] = useState('110097');
+  const [city, setCity] = useState('Metro City');
+  const [pincode, setPincode] = useState('999999');
   const [deliveryType, setDeliveryType] = useState<'courier' | 'store_pickup'>('courier');
   const [paymentMethod, setPaymentMethod] = useState<'cod' | 'upi' | 'card' | 'store_pay'>('cod');
   const [generatedOrderId, setGeneratedOrderId] = useState('');
@@ -47,7 +47,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   };
 
   const handleConfirmOrder = () => {
-    const orderId = `BBW-${Math.floor(100000 + Math.random() * 900000)}`;
+    const orderId = `VSP-${Math.floor(100000 + Math.random() * 900000)}`;
     setGeneratedOrderId(orderId);
     setStep('confirmation');
     onOrderSuccess();
@@ -60,7 +60,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         <div className="p-6 border-b border-zinc-200 flex items-center justify-between bg-zinc-50">
           <div>
             <span className="text-[11px] uppercase tracking-widest text-emerald-700 font-bold font-mono">
-              Big Bear Wear Checkout
+              Vesper Atelier Checkout
             </span>
             <h2 className="text-xl font-serif text-zinc-950 font-bold">
               {step === 'details' && '1. Shipping & Customer Information'}
@@ -99,7 +99,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     <Truck className="w-4 h-4 text-emerald-700 mt-0.5 shrink-0" />
                     <div>
                       <span className="block text-xs font-bold text-zinc-950">Express Doorstep Delivery</span>
-                      <span className="text-[11px] text-zinc-500 font-light">2-3 days in Delhi NCR, 4-5 days PAN India</span>
+                      <span className="text-[11px] text-zinc-500 font-light">2-3 days standard delivery, 4-5 days nationwide</span>
                     </div>
                   </button>
 
@@ -114,7 +114,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   >
                     <Store className="w-4 h-4 text-emerald-700 mt-0.5 shrink-0" />
                     <div>
-                      <span className="block text-xs font-bold text-zinc-950">Pickup at Kapas Hera Flagship</span>
+                      <span className="block text-xs font-bold text-zinc-950">Pickup at Flagship Atelier</span>
                       <span className="text-[11px] text-zinc-500 font-light">Ready in 2 hours · Try before taking</span>
                     </div>
                   </button>
@@ -132,7 +132,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="e.g. Rahul Sharma"
+                    placeholder="e.g. Alex Morgan"
                     className="w-full bg-white border border-zinc-300 text-zinc-900 text-xs px-3 py-2.5 rounded-lg focus:outline-none focus:border-zinc-900 placeholder:text-zinc-400"
                   />
                 </div>
@@ -314,7 +314,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                         <Store className="w-5 h-5 text-emerald-700" />
                         <div>
                           <span className="block text-xs font-bold text-zinc-950">Pay at Flagship Store</span>
-                          <span className="text-[11px] text-zinc-500">Try in our lounge and pay at the Kapas Hera counter</span>
+                          <span className="text-[11px] text-zinc-500">Try in our lounge and pay at the flagship counter</span>
                         </div>
                       </div>
                       <input
@@ -383,7 +383,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="space-y-2">
                 <h3 className="text-2xl font-serif text-zinc-950 font-bold">Order Confirmed!</h3>
                 <p className="text-xs text-zinc-600 font-light">
-                  Thank you, <strong className="text-zinc-950 font-semibold">{fullName}</strong>. We've received your order and our Kapas Hera team is preparing your articles.
+                  Thank you, <strong className="text-zinc-950 font-semibold">{fullName}</strong>. We've received your order and our flagship team is preparing your articles.
                 </p>
               </div>
 
@@ -405,7 +405,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   <span className="text-zinc-500 font-mono">Destination:</span>
                   <span className="text-zinc-800">
                     {deliveryType === 'store_pickup'
-                      ? 'Flagship Pickup: 497, Street 9, Kapas Hera'
+                      ? `Flagship Pickup: ${STORE_INFO.address}`
                       : `${city} (${pincode})`}
                   </span>
                 </div>

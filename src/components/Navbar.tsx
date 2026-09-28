@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-3 text-[11px] font-medium tracking-wide">
             <span className="flex items-center gap-1.5 text-zinc-800">
               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-              <strong className="text-zinc-900">Kapas Hera Flagship Open:</strong> 11:00 AM – 10:30 PM Today
+              <strong className="text-zinc-900">Flagship Atelier Open:</strong> 11:00 AM – 10:30 PM Today
             </span>
             <span className="hidden md:inline text-zinc-300">|</span>
             <span className="hidden md:inline text-zinc-600 font-mono text-[10px]">
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="hidden sm:flex items-center gap-1 text-zinc-600 hover:text-zinc-900 transition-colors"
             >
               <MapPin className="w-3 h-3 text-emerald-600" />
-              <span>Street 9, New Delhi 110097</span>
+              <span>{STORE_INFO.address}</span>
             </a>
           </div>
         </div>
@@ -121,16 +121,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-zinc-200 bg-zinc-50 shadow-xs flex items-center justify-center p-0.5">
                   <img
                     src="/src/assets/images/big_bear_wear_logo_mark_1790431612287.jpg"
-                    alt="Big Bear Wear Icon"
+                    alt="Vesper Atelier Icon"
                     className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="text-left sm:text-center">
                   <span className="font-serif text-xl sm:text-2xl font-bold tracking-widest text-zinc-950 uppercase group-hover:text-emerald-700 transition-colors block leading-tight">
-                    BIG BEAR WEAR
+                    VESPER ATELIER
                   </span>
                   <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-zinc-500 block">
-                    Kapas Hera · New Delhi
+                    Flagship Atelier · Fashion District
                   </span>
                 </div>
               </div>
@@ -285,7 +285,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-                <span>497, Street 9, Kapas Hera Ext., New Delhi</span>
+                <span>{STORE_INFO.address}, {STORE_INFO.city}</span>
               </div>
             </div>
           </div>

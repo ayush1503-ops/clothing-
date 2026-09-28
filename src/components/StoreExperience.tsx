@@ -21,20 +21,20 @@ export const StoreExperience: React.FC = () => {
   const handleConciergeSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!visitorName || !visitorPhone) return;
-    const generatedVoucher = `KAPAS-${Math.floor(100 + Math.random() * 900)}`;
+    const generatedVoucher = `ATELIER-${Math.floor(100 + Math.random() * 900)}`;
     setVoucherCode(generatedVoucher);
     setConciergeSubmitted(true);
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hello Big Bear Wear! I'd like to check item availability and plan a visit to your Street 9, Kapas Hera store.`
+    `Hello Vesper Atelier! I'd like to check item availability and plan a visit to your Flagship Atelier.`
   );
 
   const transitRoutes = [
-    { from: 'DLF CyberCity / Gurugram', time: '10 Mins', dist: '4.2 km', via: 'Via Shankar Chowk / NH-48' },
-    { from: 'Aerocity / T3 Terminal', time: '12 Mins', dist: '6.8 km', via: 'Via Dwarka Link Road' },
-    { from: 'Dwarka Sector 21', time: '15 Mins', dist: '7.5 km', via: 'Via Bijwasan Road' },
-    { from: 'Vasant Kunj / Ambience', time: '14 Mins', dist: '6.1 km', via: 'Via Kapas Hera Border' },
+    { from: 'North Skyline District', time: '10 Mins', dist: '4.2 km', via: 'Via Aurora Expressway' },
+    { from: 'Central Commerce Hub', time: '12 Mins', dist: '6.8 km', via: 'Via Metro Boulevard' },
+    { from: 'West Coast Promenade', time: '15 Mins', dist: '7.5 km', via: 'Via Crescent Parkway' },
+    { from: 'Garden District Galleria', time: '14 Mins', dist: '6.1 km', via: 'Via Velvet Avenue' },
   ];
 
   return (
@@ -49,12 +49,12 @@ export const StoreExperience: React.FC = () => {
               <span>Atelier Visit</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-sans font-bold text-zinc-950 uppercase tracking-tight">
-              The Kapas Hera <span className="font-serif font-normal italic text-zinc-800">Sanctuary.</span>
+              The Flagship <span className="font-serif font-normal italic text-zinc-800">Sanctuary.</span>
             </h2>
           </div>
 
           <p className="text-xs sm:text-sm text-zinc-600 max-w-md font-light leading-relaxed">
-            Clothing of this weight must be touched, draped, and judged in person. We invite you to experience our collections at Street 9 with unhurried hospitality.
+            Clothing of this weight must be touched, draped, and judged in person. We invite you to experience our collections at our flagship atelier with unhurried hospitality.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export const StoreExperience: React.FC = () => {
                     ? '/src/assets/images/storefront_facade_kapas_hera_1790427639255.jpg'
                     : '/src/assets/images/store_interior_boutique_1790427218123.jpg'
                 }
-                alt="Big Bear Wear Flagship Boutique Kapas Hera New Delhi"
+                alt="Vesper Atelier Flagship Atelier"
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -91,7 +91,7 @@ export const StoreExperience: React.FC = () => {
                       : 'text-zinc-600 hover:text-black'
                   }`}
                 >
-                  Street 9 Facade
+                  Atelier Facade
                 </button>
                 <button
                   type="button"
@@ -110,20 +110,20 @@ export const StoreExperience: React.FC = () => {
               <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none">
                 <p className="text-xs font-mono uppercase tracking-widest text-zinc-200">
                   {activePhoto === 'exterior'
-                    ? '497, Street 9 Facade · Kapas Hera Extension'
+                    ? 'Suite 404, Velvet Arcade Facade · Fashion District'
                     : 'Private Fitting Racks & Steaming Lounge'}
                 </p>
               </div>
             </div>
 
-            {/* Delhi NCR Transit Guide Table */}
+            {/* Commuter Proximity Guide Table */}
             <div className="p-5 bg-zinc-50 border border-zinc-200 rounded-xl space-y-3">
               <div className="flex items-center justify-between text-xs font-mono text-zinc-600 border-b border-zinc-200 pb-2">
                 <span className="flex items-center gap-1.5 text-zinc-900 font-bold">
                   <Car className="w-4 h-4 text-emerald-700" />
                   <span>COMMUTER PROXIMITY GUIDE</span>
                 </span>
-                <span className="text-emerald-700 font-semibold">FREE GUEST PARKING ON STREET 9</span>
+                <span className="text-emerald-700 font-semibold">FREE GUEST PARKING AT ATELIER VALET</span>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
@@ -148,13 +148,13 @@ export const StoreExperience: React.FC = () => {
                   <span>Flagship Destination</span>
                 </div>
                 <h3 className="text-lg font-serif text-zinc-950 font-bold">
-                  497, Street 9, Kapas Hera Extension
+                  {STORE_INFO.address}
                 </h3>
                 <p className="text-xs font-mono text-zinc-600">
-                  Kapas Hera, New Delhi, Delhi 110097
+                  {STORE_INFO.city} {STORE_INFO.pincode}
                 </p>
                 <p className="text-xs text-zinc-500 pt-1 leading-relaxed">
-                  Located near the Delhi–Gurugram state border. Easily accessible via NH-48, Aerocity, and Dwarka Link Road.
+                  Located in the heart of the Fashion District. Easily accessible via Aurora Expressway and Metro Boulevard.
                 </p>
               </div>
 
@@ -200,7 +200,7 @@ export const StoreExperience: React.FC = () => {
                 </a>
 
                 <a
-                  href={`https://wa.me/918750110001?text=${whatsappMessage}`}
+                  href={`https://wa.me/919999900000?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 py-3 px-4 bg-white hover:bg-zinc-100 border border-zinc-300 text-zinc-900 font-mono font-bold text-xs uppercase tracking-wider rounded-full flex items-center justify-center gap-2 transition-colors shadow-xs"
@@ -228,7 +228,7 @@ export const StoreExperience: React.FC = () => {
                     <span className="text-emerald-950 font-bold text-sm tracking-widest">{voucherCode}</span>
                   </div>
                   <p className="text-emerald-900 text-[11px] leading-relaxed">
-                    Confirmed for <strong className="text-emerald-950">{visitorName}</strong>. Show this voucher upon arrival at 497 Street 9 to test your requested articles pre-steamed.
+                    Confirmed for <strong className="text-emerald-950">{visitorName}</strong>. Show this voucher upon arrival at our flagship atelier to test your requested articles pre-steamed.
                   </p>
                 </div>
               ) : (

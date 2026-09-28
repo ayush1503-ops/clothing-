@@ -112,7 +112,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {/* Category, SKU & In-Store Stock */}
               <div className="flex items-center justify-between text-xs font-mono text-zinc-500 mb-2">
                 <span className="uppercase tracking-widest text-emerald-700 font-bold">{product.category}</span>
-                <span className="text-zinc-500">{product.articleCode || `BBW-${product.id.toUpperCase()}`}</span>
+                <span className="text-zinc-500">{product.articleCode || `VSP-${product.id.toUpperCase()}`}</span>
               </div>
 
               {/* Title */}
@@ -129,7 +129,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 )}
                 <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                  <span>{product.stockKapasHera || 4} in stock at Kapas Hera</span>
+                  <span>{product.flagshipStock || 4} in stock at Flagship Atelier</span>
                 </span>
               </div>
 
@@ -284,11 +284,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               <div className="mt-6 pt-6 border-t border-zinc-200 space-y-2.5 text-xs text-zinc-600 font-light">
                 <div className="flex items-center gap-2 text-zinc-800">
                   <Truck className="w-4 h-4 text-emerald-700 shrink-0" />
-                  <span>Free Express Delivery across Delhi NCR & India on orders &gt; ₹2,500</span>
+                  <span>Free Express Delivery on orders &gt; ₹2,500</span>
                 </div>
                 <div className="flex items-center gap-2 text-zinc-800">
                   <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-                  <span>Complimentary in-store hem adjustments at Kapas Hera Flagship</span>
+                  <span>Complimentary in-store hem adjustments at Flagship Atelier</span>
                 </div>
                 <div className="flex items-center gap-2 text-zinc-800">
                   <RefreshCw className="w-4 h-4 text-emerald-700 shrink-0" />
@@ -365,7 +365,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </button>
             </div>
             <p className="text-xs text-zinc-600 mb-4 font-light">
-              All Big Bear Wear pieces are cut with consistent proportions. Need a custom fit? Visit our Kapas Hera store for complimentary alterations.
+              All Vesper Atelier pieces are cut with consistent proportions. Need a custom fit? Visit our Flagship store for complimentary alterations.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-xs text-left text-zinc-700">

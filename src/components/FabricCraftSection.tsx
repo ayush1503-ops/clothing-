@@ -51,7 +51,7 @@ export const FabricCraftSection: React.FC<{ onExploreArticles: () => void }> = (
             <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-emerald-700 uppercase font-semibold">
               <span>Textile Engineering</span>
               <span className="text-zinc-300">/</span>
-              <span>The Big Bear Benchmark</span>
+              <span>The Vesper Benchmark</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-serif font-light uppercase tracking-tight text-zinc-950">
               Weight. Texture. <span className="italic text-zinc-700">Permanence.</span>
@@ -70,7 +70,7 @@ export const FabricCraftSection: React.FC<{ onExploreArticles: () => void }> = (
             <div className="relative aspect-[4/3] bg-zinc-100 border border-zinc-200 rounded-xl overflow-hidden shadow-sm">
               <img
                 src="/src/assets/images/macro_fabric_texture_1790427660977.jpg"
-                alt="Extreme Macro Textile Weave Big Bear Wear"
+                alt="Extreme Macro Textile Weave Vesper Atelier"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -81,7 +81,7 @@ export const FabricCraftSection: React.FC<{ onExploreArticles: () => void }> = (
               </div>
 
               <div className="absolute bottom-4 right-4 p-2.5 bg-black/85 backdrop-blur-md rounded-md text-[11px] font-mono text-zinc-200 shadow-md">
-                <span>INSPECTED AT STREET 9 ATELIER</span>
+                <span>INSPECTED AT FLAGSHIP ATELIER</span>
               </div>
             </div>
 
@@ -161,7 +161,7 @@ export const FabricCraftSection: React.FC<{ onExploreArticles: () => void }> = (
 
               <div className="pt-4 border-t border-zinc-200 flex items-center justify-between">
                 <span className="text-xs text-zinc-500">
-                  Touch & feel this exact fabric at our Kapas Hera store.
+                  Touch & feel this exact fabric at our Flagship store.
                 </span>
                 <button
                   type="button"
@@ -174,7 +174,7 @@ export const FabricCraftSection: React.FC<{ onExploreArticles: () => void }> = (
               </div>
             </div>
 
-            {/* Why Big Bear Wear Beats Mall Brands comparison row */}
+            {/* Why Vesper Atelier Beats Mall Brands comparison row */}
             <div className="grid grid-cols-3 gap-3 text-center text-xs font-mono">
               <div className="p-3 bg-white border border-zinc-200 rounded-lg">
                 <span className="text-zinc-500 block text-[10px] uppercase">Fast Fashion</span>
@@ -187,7 +187,7 @@ export const FabricCraftSection: React.FC<{ onExploreArticles: () => void }> = (
                 <span className="text-[10px] text-zinc-500">Marked up 3x for mall rent</span>
               </div>
               <div className="p-3 bg-white border-2 border-emerald-600 rounded-lg shadow-xs">
-                <span className="text-emerald-700 block text-[10px] font-bold uppercase">Big Bear Wear</span>
+                <span className="text-emerald-700 block text-[10px] font-bold uppercase">Vesper Atelier</span>
                 <span className="text-zinc-950 font-bold block mt-1">280–450 GSM</span>
                 <span className="text-[10px] text-zinc-600 font-medium">Direct boutique pricing</span>
               </div>

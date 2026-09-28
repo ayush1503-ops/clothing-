@@ -80,7 +80,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               ))}
             </div>
             <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-400 font-mono">
-              Big Bear Wear Flagship Catalog · 497, Street 9, Kapas Hera Extension
+              Vesper Atelier Flagship Catalog · Suite 404, Velvet Arcade, Fashion District
             </div>
           </div>
         )}

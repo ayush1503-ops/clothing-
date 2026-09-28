@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
               Receive Private Drop Notices & In-Store Trunk Shows
             </h3>
             <p className="text-xs text-zinc-500 font-light">
-              Limited imported articles sell out rapidly at our Kapas Hera location. Members receive advance 24-hour access.
+              Limited imported articles sell out rapidly at our flagship location. Members receive advance 24-hour access.
             </p>
           </div>
 
@@ -70,12 +70,12 @@ export const Footer: React.FC = () => {
               <div className="w-7 h-7 rounded-md overflow-hidden border border-zinc-200 bg-white p-0.5">
                 <img
                   src="/src/assets/images/big_bear_wear_logo_mark_1790431612287.jpg"
-                  alt="Big Bear Wear Icon"
+                  alt="Vesper Atelier Icon"
                   className="w-full h-full object-contain"
                 />
               </div>
               <h4 className="text-base font-serif tracking-widest text-zinc-950 uppercase font-bold">
-                BIG BEAR WEAR
+                VESPER ATELIER
               </h4>
             </div>
 
@@ -95,10 +95,10 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Kapas Hera Location (4 cols) */}
+          {/* Flagship Location (4 cols) */}
           <div className="lg:col-span-4 space-y-3">
             <h4 className="text-xs uppercase tracking-wider text-zinc-900 font-bold font-mono">
-              Kapas Hera Flagship
+              Flagship Atelier
             </h4>
             <div className="space-y-2 text-xs text-zinc-600 font-light">
               <p className="flex items-start gap-2">
@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
           <div>
-            © {new Date().getFullYear()} Big Bear Wear. All rights reserved. 497, Street 9, Kapas Hera Extension, New Delhi.
+            © {new Date().getFullYear()} Vesper Atelier. All rights reserved. Suite 404, Velvet Arcade, Fashion District.
           </div>
           <div className="flex items-center gap-6">
             <span>Honest Pricing</span>

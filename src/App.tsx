@@ -21,7 +21,7 @@ export default function App() {
   // State: Cart with persistence
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     try {
-      const saved = localStorage.getItem('bbw_cart');
+      const saved = localStorage.getItem('vesper_cart');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -31,7 +31,7 @@ export default function App() {
   // State: Wishlist with persistence
   const [wishlist, setWishlist] = useState<Product[]>(() => {
     try {
-      const saved = localStorage.getItem('bbw_wishlist');
+      const saved = localStorage.getItem('vesper_wishlist');
       return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
@@ -55,7 +55,7 @@ export default function App() {
   // Sync cart to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('bbw_cart', JSON.stringify(cartItems));
+      localStorage.setItem('vesper_cart', JSON.stringify(cartItems));
     } catch (e) {
       console.error(e);
     }
@@ -64,7 +64,7 @@ export default function App() {
   // Sync wishlist to localStorage
   useEffect(() => {
     try {
-      localStorage.setItem('bbw_wishlist', JSON.stringify(wishlist));
+      localStorage.setItem('vesper_wishlist', JSON.stringify(wishlist));
     } catch (e) {
       console.error(e);
     }
@@ -141,7 +141,7 @@ export default function App() {
 
   const handleOrderSuccess = () => {
     setCartItems([]);
-    showToast('Your order has been placed with Big Bear Wear!');
+    showToast('Your order has been placed with Vesper Atelier!');
   };
 
   // Wishlist operations
@@ -272,7 +272,7 @@ export default function App() {
           onAddReview={handleAddReview}
         />
 
-        {/* Physical Store Experience (Kapas Hera Flagship) */}
+        {/* Physical Store Experience (Flagship Atelier) */}
         <StoreExperience />
       </main>
 

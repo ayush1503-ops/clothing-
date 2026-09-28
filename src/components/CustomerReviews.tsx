@@ -15,7 +15,7 @@ export const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews, onAdd
 
   // New review form state
   const [author, setAuthor] = useState('');
-  const [location, setLocation] = useState('New Delhi');
+  const [location, setLocation] = useState('Metro City');
   const [rating, setRating] = useState(5);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -41,7 +41,7 @@ export const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews, onAdd
 
     onAddReview({
       author: author.trim(),
-      location: location.trim() || 'New Delhi',
+      location: location.trim() || 'Metro City',
       rating,
       title: title.trim() || 'Great in-store experience',
       content: content.trim(),
@@ -111,7 +111,7 @@ export const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews, onAdd
               77 Verified Google Local Reviews
             </p>
             <p className="text-xs text-zinc-500 mt-1 font-mono">
-              Listing: Big Bear Wear · Street 9 Kapas Hera
+              Listing: Vesper Atelier · Flagship Atelier
             </p>
           </div>
 
@@ -249,7 +249,7 @@ export const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews, onAdd
             <div className="flex items-center justify-between pb-4 border-b border-zinc-200 mb-6">
               <div>
                 <h3 className="text-xl font-serif text-zinc-950 font-bold">Share Your Experience</h3>
-                <p className="text-xs text-zinc-500">Big Bear Wear · Kapas Hera Extension</p>
+                <p className="text-xs text-zinc-500">Vesper Atelier · Flagship Atelier</p>
               </div>
               <button
                 onClick={() => setShowAddModal(false)}
@@ -309,7 +309,7 @@ export const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews, onAdd
                     required
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
-                    placeholder="e.g. Tarun Verma"
+                    placeholder="e.g. Alex Morgan"
                     className="w-full bg-white border border-zinc-300 text-zinc-900 text-xs px-3 py-2.5 rounded-lg focus:outline-none focus:border-zinc-900 placeholder:text-zinc-400"
                   />
                 </div>
@@ -321,7 +321,7 @@ export const CustomerReviews: React.FC<CustomerReviewsProps> = ({ reviews, onAdd
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    placeholder="e.g. Kapas Hera, Delhi"
+                    placeholder="e.g. Metro City, MC"
                     className="w-full bg-white border border-zinc-300 text-zinc-900 text-xs px-3 py-2.5 rounded-lg focus:outline-none focus:border-zinc-900 placeholder:text-zinc-400"
                   />
                 </div>

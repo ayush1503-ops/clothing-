@@ -15,7 +15,7 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onDiscoverCl
             <div className="relative aspect-[4/3] sm:aspect-[16/11] overflow-hidden bg-zinc-100 border border-zinc-200 rounded-2xl shadow-lg group">
               <img
                 src="/src/assets/images/editorial_craft_fashion_1790427203885.jpg"
-                alt="Editorial Craft & Tailored Fit by Big Bear Wear"
+                alt="Editorial Craft & Tailored Fit by Vesper Atelier"
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
@@ -25,7 +25,7 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onDiscoverCl
                   <p className="font-semibold text-zinc-900 tracking-wide">AUTUMN/WINTER '26 EDITORIAL</p>
                   <p className="text-zinc-500 text-[11px]">Structured Utility Outerwear & Combed Organic Weaves</p>
                 </div>
-                <span className="font-mono text-emerald-700 font-semibold text-[11px] hidden sm:inline">KAPAS HERA FLAGSHIP</span>
+                <span className="font-mono text-emerald-700 font-semibold text-[11px] hidden sm:inline">FLAGSHIP ATELIER</span>
               </div>
             </div>
 
@@ -37,7 +37,7 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onDiscoverCl
           <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
             <div className="space-y-2">
               <span className="text-xs uppercase tracking-[0.25em] text-emerald-700 font-bold font-mono">
-                The Big Bear Manifesto
+                The Vesper Atelier Manifesto
               </span>
               <h2 className="text-3xl sm:text-5xl font-sans font-black text-zinc-950 uppercase tracking-tight leading-[1.02]">
                 Made For Everyday <span className="font-serif font-normal italic text-zinc-800">Style.</span>
@@ -49,7 +49,7 @@ export const EditorialSection: React.FC<EditorialSectionProps> = ({ onDiscoverCl
             </blockquote>
 
             <p className="text-sm text-zinc-600 leading-relaxed font-light">
-              We reject fleeting micro-trends and synthetic shortcuts. Every garment in our Kapas Hera boutique is selected with deliberate intent—rigorous fabric weight, double-stitched reinforcements, and a silhouette cut to look exceptional both in motion and at rest.
+              We reject fleeting micro-trends and synthetic shortcuts. Every garment in our flagship boutique is selected with deliberate intent—rigorous fabric weight, double-stitched reinforcements, and a silhouette cut to look exceptional both in motion and at rest.
             </p>
 
             {/* 3 Craft Pillars */}

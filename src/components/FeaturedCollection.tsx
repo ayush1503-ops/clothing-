@@ -106,7 +106,7 @@ export const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-zinc-100">
                 {/* Fallback pattern underneath */}
                 <div className="absolute inset-0 flex items-center justify-center text-zinc-400 text-xs font-mono uppercase">
-                  Big Bear Wear · {product.name}
+                  Vesper Atelier · {product.name}
                 </div>
 
                 {/* Primary Image */}
@@ -212,7 +212,7 @@ export const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
 
                   <div className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-500 mt-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span>In Stock at Kapas Hera ({product.stockKapasHera || 4} available)</span>
+                    <span>In Stock at Flagship Atelier ({product.flagshipStock || 4} available)</span>
                   </div>
                 </div>
 

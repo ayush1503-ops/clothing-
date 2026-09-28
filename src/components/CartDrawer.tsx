@@ -37,16 +37,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     e.preventDefault();
     setPromoError('');
     const code = promoCode.trim().toUpperCase();
-    if (code === 'BIGBEAR10' || code === 'WELCOME10') {
+    if (code === 'VESPER10' || code === 'WELCOME10') {
       setPromoDiscount(0.1);
       setPromoApplied(code);
       setPromoError('');
-    } else if (code === 'KAPASHERA') {
+    } else if (code === 'FLAGSHIP15') {
       setPromoDiscount(0.15);
       setPromoApplied(code);
       setPromoError('');
     } else {
-      setPromoError('Invalid promo code. Try "BIGBEAR10"');
+      setPromoError('Invalid promo code. Try "VESPER10"');
     }
   };
 
@@ -109,7 +109,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
                 <h3 className="text-base font-serif text-zinc-950 font-bold">Your bag is empty</h3>
                 <p className="text-xs text-zinc-500 max-w-xs mx-auto font-light">
-                  Explore our Kapas Hera curated collection of imported heavyweight tees, jackets, and raw denim.
+                  Explore our flagship curated collection of imported heavyweight tees, jackets, and raw denim.
                 </p>
                 <button
                   onClick={onClose}
@@ -196,7 +196,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       type="text"
                       value={promoCode}
                       onChange={(e) => setPromoCode(e.target.value)}
-                      placeholder="Promo code (e.g. BIGBEAR10)"
+                      placeholder="Promo code (e.g. VESPER10)"
                       className="w-full bg-white border border-zinc-300 rounded-lg text-zinc-900 text-xs px-3 py-2 uppercase placeholder:normal-case focus:outline-none focus:border-zinc-900 placeholder:text-zinc-400"
                     />
                   </div>

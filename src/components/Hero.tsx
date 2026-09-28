@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onVisitStoreClick })
               <span className="text-zinc-300">·</span>
               <span className="text-zinc-600">77 Verified Google Reviews</span>
               <span className="text-zinc-300 hidden sm:inline">·</span>
-              <span className="text-emerald-700 font-semibold hidden sm:inline">Kapas Hera Flagship</span>
+              <span className="text-emerald-700 font-semibold hidden sm:inline">Flagship Atelier</span>
             </div>
 
             {/* Sub-label */}
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onVisitStoreClick })
                 className="px-6 py-3.5 bg-white hover:bg-zinc-50 text-zinc-900 font-medium text-xs sm:text-sm uppercase tracking-wider rounded-full border border-zinc-300 hover:border-zinc-400 transition-all flex items-center gap-2 shadow-xs"
               >
                 <MapPin className="w-4 h-4 text-emerald-600" />
-                <span>Visit Store (Street 9)</span>
+                <span>Visit Flagship Atelier</span>
               </button>
             </div>
 
@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onVisitStoreClick })
             <div className="relative w-full max-w-lg aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl border border-zinc-200/90 bg-white group">
               <img
                 src="/src/assets/images/hero_white_studio_fashion_1790431595732.jpg"
-                alt="Big Bear Wear White Studio Fashion"
+                alt="Vesper Atelier White Studio Fashion"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -99,13 +99,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onVisitStoreClick })
                   FEATURED ARTICLE
                 </span>
                 <p className="font-semibold text-zinc-900">450 GSM French Terry Hoodie</p>
-                <p className="font-mono text-[11px] text-zinc-500">₹3,290 · In Stock at Kapas Hera</p>
+                <p className="font-mono text-[11px] text-zinc-500">₹3,290 · In Stock at Flagship</p>
               </div>
 
               {/* In-Store fitting guarantee watermark */}
               <div className="absolute bottom-4 right-4 p-2.5 bg-black/85 backdrop-blur-md rounded-md text-white text-[11px] font-mono flex items-center gap-1.5 shadow-md">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Available to try at Street 9</span>
+                <span>Available to try at Flagship Atelier</span>
               </div>
             </div>
           </div>

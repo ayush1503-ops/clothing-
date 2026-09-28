@@ -7,7 +7,7 @@ export interface Product {
   badge?: string;
   articleCode?: string;
   weightGsm?: string;
-  stockKapasHera?: number;
+  flagshipStock?: number;
   primaryImage: string;
   secondaryImage: string;
   colors: { name: string; hex: string }[];

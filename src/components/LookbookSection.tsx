@@ -18,14 +18,14 @@ export const LookbookSection: React.FC<LookbookSectionProps> = ({ onShopItem }) 
           <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-emerald-700 mb-2 font-mono font-bold">
             <span>Visual Editorial & In-Store Captures</span>
             <span aria-hidden="true" className="text-zinc-300">·</span>
-            <span className="text-zinc-500">@bigbearwear</span>
+            <span className="text-zinc-500">@vesperatelier</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-sans font-bold text-zinc-950 uppercase tracking-tight">
             The Living Lookbook
           </h2>
         </div>
         <p className="text-xs text-zinc-500 max-w-xs sm:text-right font-light leading-relaxed">
-          Asymmetric cuts and everyday silhouettes styled directly from the Kapas Hera flagship racks.
+          Asymmetric cuts and everyday silhouettes styled directly from the Flagship Atelier racks.
         </p>
       </div>
 
